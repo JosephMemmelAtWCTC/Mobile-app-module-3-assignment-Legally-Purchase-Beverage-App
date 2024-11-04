@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WhenCanILegallyBuyAlcoholApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="When Can I Legally Purchase Alcohol?"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Please Make Responsible Choices"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Respionsible choices reminder" />
+
+            <Label
+                Text="Select Your Birthday"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="Enter your birthday" />
+
+            <DatePicker
+                x:Name="BornDatePicker"
+                HorizontalOptions="Center"
+                DateSelected="OnUpdatePurchaseParameters"/>
+
+                <!-- </DatePicker> MinimumDate="{Binding MinDate}"
+                MaximumDate="{Binding MaxDate}"-->
+
+            <Label
+                Text="Select Your Country"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="Enter your country" />
+
+            <Picker Title="Select A Country"
+                x:Name="SelectCountry"
+                SelectedIndexChanged="OnUpdatePurchaseParameters">
+                <Picker.Items/>
+            </Picker>
+
+            <!-- <Button
+                x:Name="CounterBtn"
+                Text="Click me" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" /> -->
+
+            <Label
+                x:Name="AlcholBuyLabel"
+                Text=""
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="Date you will be able to buy alchol" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
